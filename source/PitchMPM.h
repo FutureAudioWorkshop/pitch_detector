@@ -1,4 +1,5 @@
 
+#include "../../../AudioFFT/AudioFFT.h"
 
 #if JUCE_IOS || JUCE_MAC // TODO: Move this to Projucer project?
 #define AUDIOFFT_APPLE_ACCELERATE 1
@@ -7,6 +8,8 @@
 #define CUTOFF 0.93 //0.97 is default
 #define SMALL_CUTOFF 0.5
 #define LOWER_PITCH_CUTOFF 80 //hz
+
+#define FLT_MAX (1e+37)
 
 /**
  * TODO: Provide switch between time-based and FFT based methods
