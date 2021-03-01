@@ -1,3 +1,12 @@
+#ifdef __clang__
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wunused-function"
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    #pragma clang diagnostic ignored "-Wreturn-type"
+    #pragma clang diagnostic ignored "-Wreorder"
+    #pragma clang diagnostic ignored "-Wmacro-redefined"
+#endif
+
 class PitchYIN
 {
 
@@ -209,3 +218,8 @@ private:
         return pos;
     }    
 };
+
+
+#ifdef __clang__
+    #pragma clang diagnostic pop
+#endif

@@ -2,6 +2,15 @@
 #include "../../../AudioFFT/AudioFFT.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 
+#ifdef __clang__
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wunused-function"
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    #pragma clang diagnostic ignored "-Wreturn-type"
+    #pragma clang diagnostic ignored "-Wreorder"
+     #pragma clang diagnostic ignored "-Wmacro-redefined"
+#endif
+
 #if JUCE_IOS || JUCE_MAC // TODO: Move this to Projucer project?
 #define AUDIOFFT_APPLE_ACCELERATE 1
 #endif
@@ -15,6 +24,8 @@
 /**
  * TODO: Provide switch between time-based and FFT based methods
  */
+
+
 
 class PitchMPM
 {
@@ -349,3 +360,7 @@ private:
 
 
 };
+
+#ifdef __clang__
+    #pragma clang diagnostic pop
+#endif
